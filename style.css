@@ -152,6 +152,16 @@ ul {
     background-color: var(--color-button);
     font-size: 16px;
 }
+.button-draw-reset {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: rgb(34, 197, 53);
+    font-size: 16px;
+    text-align: center;
+}
 
 .button-draw img {
     margin-right: 40px;
@@ -159,4 +169,7 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+.button-draw-reset:hover {
+    background-color: rgb(115, 223, 105);
 }

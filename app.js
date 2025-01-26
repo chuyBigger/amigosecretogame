@@ -13,10 +13,12 @@
 // Sorteo aleatorio: 
 // Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
 const input = document.querySelector('#amigo').value;
-const amigos = [];
+let amigos = [];
 const listFiendsClean = document.getElementById('listaAmigos')
+const buttonR = document.getElementById('reset-button')
 
 
+// Funcion que agrega los nombres a una lista y da un erro si el campo esta vacio
 function agregarAmigo(){
   let input = document.querySelector('#amigo').value;
   if(input === ''){
@@ -27,82 +29,51 @@ function agregarAmigo(){
     cleanBox();
     friendList();
    }
-  
 }
-
+// funcion que limpia el input donde se agregan los nombres
 function cleanBox(){
   let box = document.getElementById('amigo');
   box.value = '';
 }
-
-// function cleanList(){
-//   document.getElementById('lismigos').innerHTML = '';
-// }
-
-
-
+// fucion que crea una lista de los nombres a sortea y la muestra a travez del html
 function friendList(){
   listFiendsClean.innerHTML = ``;
   const list = document.getElementById('listaAmigos');
   for (let i = 0; i < amigos.length; i++) {
     list.innerHTML += `<li>${amigos[i]}</li>`;
   }
-  console.log(list)
 }
+// fucion que realiza el sorteo y lanza el resultado del ganador 
+function sortearAmigo(){
+  ganador = amigos[Math.floor(Math.random() * amigos.length)];
+  console.log(ganador)
+  let winner = document.getElementById('winner');
+  winner.textContent = `Felicidades el ganador es "!!!${ganador}¡¡¡"" `;
+  activedButtom();
+}
+//funcion borra la lista de amigos para reiniciar el juego
+function resetListFriend(){
+  listFiendsClean.innerHTML = ``;
+}
+//funcion borra el campo donde a parece el ganador para reiniciar el juego
+function resetwinner(){
+  winner.textContent = ``;
+}
+// funcion que activa el boton de reinicio del juego
+function activedButtom (){
+  buttonR.disabled = false;
+  console.log('ando actibando el boton')
+}
+// funcion que descativa el reinicio del juego
+function disabledButtom (){
+  buttonR.disabled = true;
+}
+// funcion de reinicio del juego
+function resetgame(){
+  amigos = [];
+  cleanBox();
+  resetwinner();
+  resetListFriend();
+  disabledButtom();
 
-//   let namesAmigos
-//   if ( namesAmigos == '' ){
-//       alert('Ingresa tienes que ingresar el nombre de un amigo')
-//     } else {
-//         amigos.push(document.getElementById('amigo').value);
-        
-//         amigos.innerHTML += `{'listaAmigos.value'}`;
-
-
-//         console.log(amigos)
-//     }
-// }
-
-
-// let listaDeAmigos = document.querySelector('#listaAmigos');
-// listaDeAmigos.innerHTML == 'listaAmigos'
-
-
-// function agregarNombre(){
-//     amigos = document.getElementById('amigo').value;
-
-// }
-
-
-// function recorrerListaAmigos() {
-//     let ul = document.getElementById('listaAmigos');
-  
-//     ul.innerHTML = '';
-  
-//     amigos.forEach(amigo => {
-//       let li = document.createElement('li');
-      
-//       li.textContent = amigo;
-      
-//       li.classList.add('amigo-item');
-  
-//       ul.append(li);
-  
-//     });
-//   }
-
-
-
-
-
-// function limpiarInput() {
-//     document.getElementById('amigo').value = '';
-//   }
-
-// function limpiarListaAmigos() {
-//     let listaAmigos = document.getElementById('listaAmigos');
-  
-//     while (listaAmigos.firstChild) {
-//       listaAmigos.removeChild(listaAmigos.firstChild);
-//     }
-// }
+}
