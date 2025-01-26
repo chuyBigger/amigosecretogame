@@ -3,10 +3,14 @@
 <h3>juegarlo es muy facil</h3>
 una vez entrando a la url "https://chuybigger.github.io/amigosecretogame/"
 * Puedes observar todos los elementos para iniciar a jugar.
--caja de texto : para agregar los nombres a nuetra lista de participantes
--boton "añadir" con el cual añadira el nombre a la lista (solo se deve añadir un nombre por vez)
--boton sorteo : para sortear el juego y el sistema elija un ganador de entre nuetra lista
--boton reiniciar juego : para volver a jugar
+
+<h4>-caja de texto : para agregar los nombres a nuetra lista de participantes</h4>
+
+<h4>-boton "añadir" con el cual añadira el nombre a la lista (solo se deve añadir un nombre por vez)</h4>
+
+<h4>-boton sorteo : para sortear el juego y el sistema elija un ganador de entre nuetra lista</h4>
+
+<h4>-boton reiniciar juego : para volver a jugar</h4>
 
 ![AMIGO SECRETO INSTRUCCIONES 01](https://github.com/user-attachments/assets/9150c17f-446e-4665-8ee6-b5f32d47e563)
 
