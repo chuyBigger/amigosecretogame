@@ -48,7 +48,7 @@ function sortearAmigo(){
   ganador = amigos[Math.floor(Math.random() * amigos.length)];
   console.log(ganador)
   let winner = document.getElementById('winner');
-  winner.textContent = `Felicidades el ganador es "!!!${ganador}¡¡¡"" `;
+  winner.textContent = `Felicidades el ganador es "!!! ${ganador} ¡¡¡"" `;
   activedButtom();
 }
 //funcion borra la lista de amigos para reiniciar el juego
