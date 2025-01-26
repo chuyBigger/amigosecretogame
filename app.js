@@ -12,8 +12,9 @@
 
 // Sorteo aleatorio: 
 // Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
-let input = document.querySelector('#amigo').value;
-let amigos = [];
+const input = document.querySelector('#amigo').value;
+const amigos = [];
+const listFiendsClean = document.getElementById('listaAmigos')
 
 
 function agregarAmigo(){
@@ -34,14 +35,15 @@ function cleanBox(){
   box.value = '';
 }
 
-function cleanList(){
-  let list = document.getElementById('listaAmigos');
-  list.value = '';
-}
+// function cleanList(){
+//   document.getElementById('lismigos').innerHTML = '';
+// }
+
+
 
 function friendList(){
+  listFiendsClean.innerHTML = ``;
   const list = document.getElementById('listaAmigos');
-  cleanList();
   for (let i = 0; i < amigos.length; i++) {
     list.innerHTML += `<li>${amigos[i]}</li>`;
   }
